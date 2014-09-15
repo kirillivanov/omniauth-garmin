@@ -1,4 +1,4 @@
-require 'omniauth-oauth2'
+require 'omniauth-oauth'
 require 'multi_json'
 
 
