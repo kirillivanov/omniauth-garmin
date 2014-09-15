@@ -15,17 +15,11 @@ module OmniAuth
 		}
 
       	def request_phase
-        	puts authorize_params
+      		p options
+      		options[:authorize_params] = { oauth_callback: options[:callback_url] } if options[:callback_url]
         	super
       	end
 
-		def authorize_params
-	        super.tap do |params|
-	          if request.params['oauth_callback']
-	            params[:oauth_callback] = request.params['oauth_callback']
-	          end
-	        end
-      	end
     end
   end
 end
